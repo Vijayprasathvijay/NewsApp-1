@@ -33,14 +33,15 @@
 	  		</button>
 		</div>
 		<div class="buttons">
-			<button mat-raised-button color="light" class="icons" >
-			Register</button>
-	  </div>
-	  <div class="buttons">
-		<button mat-raised-button color="light" class="icons" >
-		Login</button>
-  </div>
+			<button mat-raised-button color="light" class="icons" (click)= "OnRegister()" >
+			<a routerlink="user-reg" routerLinkActive="active">Register</a></button>
+	  	</div>
+	  	<div class="buttons">
+			<button mat-raised-button color="light" class="icons" (click)="OnLogin()" >
+				<a routerlink="login" routerLinkActive="active">Login</a></button>
+  	  	</div>
 	</mat-toolbar>
+	<router-outlet></router-outlet>
 </div>
 <!-- <a class="nav--menu_item_anchor" href="#" onclick="javascript:ga('send', 'event', 'menu', 'click', 'new_menu_open');">
 	<svg version="1.0" x="0px" y="0px" width="30px" height="24px" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="sprite--menu-icon injected-svg" viewBox="0 0 30 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" id="BigNavIcon" data-src="/wp-content/uploads/aqua-svg-sprite/aqua-svg-general-sprite.svg#menu-icon">
