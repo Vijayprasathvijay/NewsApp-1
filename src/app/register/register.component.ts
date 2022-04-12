@@ -1,14 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Directive, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Register } from '../register';
+import { RegisterdetailsService } from '../registerdetails.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+})
+@Directive({
+  selector:'[ngModel]',
+  exportAs:'ngModel'
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  register: Register[]=[];
+  
+  constructor(private registerdetailsService:RegisterdetailsService,
+    private route:ActivatedRoute,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -16,8 +27,9 @@ export class RegisterComponent implements OnInit {
   {
     this.router.navigate(['/login'])
   }
-  onRegister()
+  onRegister(name:String)
   {
     
+    this.router.navigate(['/success',name]);
   }
 }

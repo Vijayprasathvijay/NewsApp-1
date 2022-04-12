@@ -13,13 +13,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { SuccessregisterComponent } from './successregister/successregister.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    SuccessregisterComponent,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,
